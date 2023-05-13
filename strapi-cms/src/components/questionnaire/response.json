@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_questionnaire_responses",
+  "info": {
+    "displayName": "Response"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "string"
+    },
+    "selectedOption": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

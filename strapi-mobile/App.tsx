@@ -7,27 +7,23 @@
 
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {Text, View} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from './src/screen/home/Home';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import WebViewComponent from './src/component/WebViewComponent';
 import VideoPlayerComponent from './src/component/VideoPlayerComponent';
-
-function SettingsScreen() {
-  return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text>Settings!</Text>
-    </View>
-  );
-}
+import Questionnaire from './src/screen/questionnaire/Questionnaire';
 
 const HomeStack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 function HomeStackScreen() {
   return (
-    <HomeStack.Navigator>
+    <HomeStack.Navigator
+      screenOptions={{
+        headerStyle: {backgroundColor: '#414141'},
+        headerTitleStyle: {color: 'white'},
+      }}>
       <HomeStack.Screen name="Home" component={Home} />
       <HomeStack.Screen name="WebView" component={WebViewComponent} />
       <HomeStack.Screen name="VideoPlayer" component={VideoPlayerComponent} />
@@ -39,7 +35,7 @@ function App(): JSX.Element {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        screenOptions={({route}) => ({
+        screenOptions={() => ({
           tabBarActiveTintColor: '#f8f9fa',
           tabBarInactiveTintColor: '#676767',
           tabBarLabelStyle: {
@@ -55,7 +51,14 @@ function App(): JSX.Element {
           component={HomeStackScreen}
           options={{headerShown: false}}
         />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
+        <Tab.Screen
+          name="Questionnaire"
+          component={Questionnaire}
+          options={{
+            headerStyle: {backgroundColor: '#414141'},
+            headerTitleStyle: {color: 'white'},
+          }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );

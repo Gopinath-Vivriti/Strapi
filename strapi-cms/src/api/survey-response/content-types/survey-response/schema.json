@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "survey_responses",
+  "info": {
+    "singularName": "survey-response",
+    "pluralName": "survey-responses",
+    "displayName": "SurveyResponse",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "userID": {
+      "type": "uid"
+    },
+    "response": {
+      "type": "component",
+      "repeatable": true,
+      "component": "questionnaire.response"
+    }
+  }
+}

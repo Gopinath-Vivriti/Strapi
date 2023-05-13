@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_questionnaire_options",
+  "info": {
+    "displayName": "Option"
+  },
+  "options": {},
+  "attributes": {
+    "displayValue": {
+      "type": "string"
+    },
+    "value": {
+      "type": "string"
+    },
+    "showTextField": {
+      "type": "boolean"
+    }
+  }
+}
